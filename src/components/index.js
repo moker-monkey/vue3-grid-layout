@@ -8,17 +8,14 @@ const VueGridLayout = {
     GridItem
 }
 
-export function install(Vue) {
+function install(Vue) {
     if (install.installed) return;
     install.installed = true;
     Object.keys(VueGridLayout).forEach(name => {
         Vue.component(name, VueGridLayout[name]);
     });
 }
-
-const plugin = {
-    install,
-};
+VueGridLayout.install = install
 
 let GlobalVue = null;
 if (typeof window !== 'undefined') {
@@ -27,8 +24,11 @@ if (typeof window !== 'undefined') {
     GlobalVue = global.Vue;
 }
 if (GlobalVue) {
-    GlobalVue.use(plugin);
+    GlobalVue.use(VueGridLayout.install);
 }
 
 export default VueGridLayout;
-export { GridLayout, GridItem };
+export {
+    GridLayout,
+    GridItem
+};
