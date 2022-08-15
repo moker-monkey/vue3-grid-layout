@@ -1,15 +1,13 @@
-<h1 align="center">vue-grid-layout</h1>
+<h1 align="center">fleet-grid-layout</h1>
 
 <p align="center">
 <a href="https://www.npmjs.com/package/vue-grid-layout"><img src="https://img.shields.io/npm/v/vue-grid-layout.svg"/> <img src="https://img.shields.io/npm/dm/vue-grid-layout.svg"/></a> <a href="https://vuejs.org/"><img src="https://img.shields.io/badge/vue-2.2.x-brightgreen.svg"/></a>
 </p>
 
 vue-grid-layout is a grid layout system, like [Gridster](http://dsmorse.github.io/gridster.js/), for Vue.js. **Heavily inspired by [React-Grid-Layout](https://github.com/STRML/react-grid-layout)**
+fleet-grid-layout is fork from vue-grid-layout but support vue3, and publish by npm.
 
-### **Current version:** 2.3.9 (Supports Vue 2.2+)
-
-### **For Vue 2.1.10 and below use version [2.1.3](https://github.com/jbaysolutions/vue-grid-layout/tree/2.1.3)**
-### **For Vue 1 use version [1.0.3](https://github.com/jbaysolutions/vue-grid-layout/tree/1.0.3)** 
+### **Current version:** 1.0.0 (Supports Vue 3+)
 
 <br/>
 
@@ -24,6 +22,13 @@ English | [简体中文](./README-zh_CN.md)
 - [Getting Started](#getting-started)
   - [Installation](#installation)
     - [npm](#npm)
+    - [browser](#browser)
+  - [Usage](#usage)
+  - [Documentation](#documentation)
+    - [Properties](#properties)
+      - [GridLayout](#gridlayout)
+      - [GridItem](#griditem)
+    - [Events](#events)
 - [Contribute](#contribute)
 - [TODO List](#todo-list)
 
@@ -65,10 +70,10 @@ Also check https://cli.vuejs.org/guide/build-targets.html#library
 #### npm
 
     # install with npm    
-	npm install vue-grid-layout --save
+	npm install fleet-grid-layout --save
     
     # install with yarn    
-    yarn add vue-grid-layout
+    yarn add fleet-grid-layout
 
 
 Import the library
