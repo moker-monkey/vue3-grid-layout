@@ -1,4 +1,10 @@
-import { createApp } from 'vue'
+import {
+    createApp
+} from 'vue'
 import App from './App.vue'
+import TestApp from './TestBuild.vue'
+import {
+    install
+} from '../dist/fleet-grid-layout.cjs'
 
-createApp(App).mount('#app')
+createApp(TestApp).mount('#app').use(install)
