@@ -1,6 +1,6 @@
 {
   "name": "fleet-grid-layout",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A draggable and resizable grid layout, as a Vue3 component.",
   "keywords": [
     "grid",
