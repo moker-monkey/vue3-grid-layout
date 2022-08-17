@@ -130,7 +130,7 @@ export function compactItem(compareWith: Layout, l: LayoutItem, verticalCompact:
  * @param  {Array} layout Layout array.
  * @param  {Number} bounds Number of columns.
  */
-export function correctBounds(layout: Layout, bounds: {cols: number}): Layout {
+export function correctBounds(layout: Layout, bounds: { cols: number }): Layout {
   const collidesWith = getStatics(layout)
   for (let i = 0, len = layout.length; i < len; i++) {
     const l = layout[i]
@@ -267,7 +267,7 @@ export function moveElement(layout: Layout, l: LayoutItem, x: number, y: number,
  *                                   by the user.
  */
 export function moveElementAwayFromCollision(layout, collidesWith,
-                                             itemToMove, isUserAction) {
+  itemToMove, isUserAction) {
 
   const preventCollision = false // we're already colliding
   // If there is enough space above the collision to put this element, move it there.
@@ -284,13 +284,13 @@ export function moveElementAwayFromCollision(layout, collidesWith,
     }
     fakeItem.y = Math.max(collidesWith.y - itemToMove.h, 0)
     if (!getFirstCollision(layout, fakeItem)) {
-      return moveElement(layout, itemToMove, undefined, fakeItem.y, preventCollision)
+      return moveElement(layout, itemToMove, (undefined as any), fakeItem.y, preventCollision)
     }
   }
 
   // Previously this was optimized to move below the collision directly, but this can cause problems
   // with cascading moves, as an item may actually leapflog a collision and cause a reversal in order.
-  return moveElement(layout, itemToMove, undefined, itemToMove.y + 1, preventCollision)
+  return moveElement(layout, itemToMove, (undefined as any), itemToMove.y + 1, preventCollision)
 }
 
 export function setTransform(top: number, left: number, width: number, height: number) {
@@ -369,7 +369,7 @@ export function setTopRight(top: number, right: number, width: number, height: n
  * @return {Array}        Layout, sorted static items first.
  */
 export function sortLayoutItemsByRowCol(layout: Layout): Layout {
-  return [].concat(layout).sort(function (a, b) {
+  return [].concat((layout as any)).sort(function (a: any, b: any) {
     if (a.y === b.y && a.x === b.x) {
       return 0
     }
@@ -389,7 +389,7 @@ export function sortLayoutItemsByRowCol(layout: Layout): Layout {
  * @param  {String} [contextName] Context name for errors.
  * @throw  {Error}                Validation error.
  */
-export function validateLayout(layout: Layout, contextName = 'Layout'):void {
+export function validateLayout(layout: Layout, contextName = 'Layout'): void {
   const subProps = ['x', 'y', 'w', 'h']
   if (!Array.isArray(layout)) throw new Error(contextName + " must be an array!")
   for (let i = 0, len = layout.length; i < len; i++) {

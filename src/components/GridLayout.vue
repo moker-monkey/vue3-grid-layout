@@ -16,7 +16,7 @@
         transition: height 200ms ease;
     }
 </style>
-<script>
+<script lang="ts">
     import mitt from 'mitt'
     import elementResizeDetectorMaker from 'element-resize-detector'
 

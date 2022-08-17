@@ -2,9 +2,8 @@ import {
     createApp
 } from 'vue'
 import App from './App.vue'
-import TestApp from './TestBuild.vue'
 import {
     install
-} from '../dist/fleet-grid-layout.cjs'
+} from '../dist/fleet-grid-layout.mjs'
 
-createApp(TestApp).mount('#app').use(install)
+createApp(App).use(install).mount('#app')
