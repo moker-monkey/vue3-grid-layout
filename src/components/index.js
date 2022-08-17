@@ -7,9 +7,19 @@ const VueGridLayout = {
     GridLayout,
     GridItem
 }
+const components = [GridLayout, GridItem]
+
+const install = (app) => {
+    components.forEach(
+        (component) => {
+            app.component(component.name, component)
+        }
+    )
+}
 
 export default VueGridLayout;
 export {
     GridLayout,
-    GridItem
+    GridItem,
+    install
 };
